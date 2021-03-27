@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+name = Sérgio Berlotto
+email = sergio@jetbov.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgg = log --pretty=format:'%Cred%h%Creset %cD (%cr) %Cgreen%s%Creset (%ce)'
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = true
