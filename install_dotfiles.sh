@@ -6,32 +6,55 @@
 #vimrc"
 FILENAME=~/.vimrc
 if [[ -f "$FILENAME" ]]; then
-    echo "$FILENAME exists. Backing it up to $FILENAME.bkp"
-    mv $FILENAME "$FILENAME.bkp"
+    read -p "Do you want to overwrite $FILENAME [y/N] ? " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[YySs]$ ]]
+    then
+        cp vim/vimrc $FILENAME
+    fi
 fi
-cp vim/vimrc $FILENAME
 
 #zsh"
 FILENAME=~/.zshrc
 if [[ -f "$FILENAME" ]]; then
-    echo "$FILENAME exists. Backing it up to $FILENAME.bkp"
-    mv $FILENAME "$FILENAME.bkp"
+    read -p "Do you want to overwrite $FILENAME [y/N] ? " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[YySs]$ ]]
+    then
+        cp zsh/zshrc $FILENAME
+    fi
 fi
-cp zsh/zshrc $FILENAME
 
 #Alacritty terminal"
 mkdir -p ~/.config/alacritty
 FILENAME=~/.config/alacritty/alacritty.yml
 if [[ -f "$FILENAME" ]]; then
-    echo "$FILENAME exists. Backing it up to $FILENAME.bkp"
-    mv $FILENAME "$FILENAME.bkp"
+    read -p "Do you want to overwrite $FILENAME [y/N] ? " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[YySs]$ ]]
+    then
+        cp alacritty/alacritty.yml $FILENAME
+    fi
 fi
-cp alacritty/alacritty.yml $FILENAME
 
 #GIT
 FILENAME=~/.gitconfig
 if [[ -f "$FILENAME" ]]; then
-    echo "$FILENAME exists. Backing it up to $FILENAME.bkp"
-    mv $FILENAME "$FILENAME.bkp"
+    read -p "Do you want to overwrite $FILENAME [y/N] ? " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[YySs]$ ]]
+    then
+        cp git/gitconfig $FILENAME
+    fi
 fi
-cp git/gitconfig $FILENAME
+
+#TMUX
+FILENAME=~/.tmux.conf
+if [[ -f "$FILENAME" ]]; then
+    read -p "Do you want to overwrite $FILENAME [y/N] ? " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[YySs]$ ]]
+    then
+        cp tmux/tmux.conf $FILENAME
+    fi
+fi

@@ -75,11 +75,14 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+    virtualenvwrapper
 	)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -105,24 +108,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# Custom Personal Area
+
 #DOCKER
 alias k="kubectl"
 alias kx="kubectx"
 alias dc="docker-compose"
 
 #POSTGRES
-alias PSQL_PROD="PGPASSWORD=yourpwd psql -h pg-server-url.com -U pguser databasename"
+alias PSQL_CONN="PGPASSWORD=yourpwd psql -h pg-server-url.com -U pguser databasename"
 
 #GIT
 alias ltags="git tag -l --sort=-creatordate --format \"%(creatordate:short)%09%(refname:strip=2)\""
-alias go="git checkout"
+alias gc="git checkout"
 alias gp="git push"
-alias gu="git pull"
 alias gpp="git push -u origin HEAD"
 alias branch="git checkout -b"
 
 #bash/shell/zsh
-alias configshell="vim ~/.zshrc"
+alias configzsh="vim ~/.zshrc"
+alias configalacritty="vim ~/.config/alacritty/alacritty.yml"
 
 # ================================================================
 function bash_function_sample()
@@ -138,3 +144,17 @@ function checkout_last_tag_to_fix() {
     echo Checking out tag: $tag
     git checkout $tag -b $fix_branch
 }
+
+# End Custom Personal Area
+
+export PATH="/home/sergio/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

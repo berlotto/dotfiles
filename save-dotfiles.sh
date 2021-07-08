@@ -14,3 +14,6 @@ cp ~/.config/alacritty/alacritty.yml alacritty/alacritty.yml
 
 #git
 cp ~/.gitconfig git/gitconfig
+
+#tmux
+cp ~/.tmux.conf tmux/tmux.conf

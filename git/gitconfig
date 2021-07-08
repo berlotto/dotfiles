@@ -9,3 +9,5 @@ email = sergio@jetbov.com
 	autosetuprebase = always
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
