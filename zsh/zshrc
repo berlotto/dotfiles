@@ -145,6 +145,12 @@ function checkout_last_tag_to_fix() {
     git checkout $tag -b $fix_branch
 }
 
+function meuip() {
+    echo "Externo  : $(curl -s ifconfig.me)"
+    echo "Cabo     : $(ifconfig enp3s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
+    echo "Wireless : $(ifconfig wlp2s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
+}
+
 # End Custom Personal Area
 
 export PATH="/home/sergio/.pyenv/bin:$PATH"
